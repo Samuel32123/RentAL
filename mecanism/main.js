@@ -1,17 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const menuOpenButton = document.querySelector("#menu-open-button");
-    const menuCloseButton = document.querySelector("#menu-close-button");
 
-    if (menuOpenButton) {
-        menuOpenButton.addEventListener("click", () => {
-            document.body.classList.add("show-mobile-menu");
-        });
-    }
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header");
 
-    if (menuCloseButton) {
-        menuCloseButton.addEventListener("click", () => {
-            document.body.classList.remove("show-mobile-menu");
-        });
-    }
+  if (window.scrollY > 50) {
+    header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.2)";
+  } else {
+    header.style.boxShadow = "none";
+  }
 });
-
